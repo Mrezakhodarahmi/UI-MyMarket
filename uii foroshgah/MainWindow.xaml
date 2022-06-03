@@ -1,0 +1,271 @@
+﻿<Window x:Class="uii_foroshgah.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uii_foroshgah"
+        mc:Ignorable="d"
+        Title="Store" Height="450" Width="800">
+    <Grid x:Name="Foroshgah">
+        <Grid Name="SignUpPage" FlowDirection="RightToLeft">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="pink"/>
+                    <GradientStop Color="Purple" Offset="2"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid Name="SignInPage" FlowDirection="RightToLeft" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="108.51"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="به آرسس شاپ خوش آمدید "  Margin="240 35 0 0" FontSize="30" Grid.Row="0" Grid.ColumnSpan="2" FontFamily="Tahoma">
+                </TextBlock>
+                <TextBlock Text="نام کاربری : " Grid.Row="1" FontSize="27" Margin="5 25 0 0"></TextBlock>
+                <TextBlock Text="رمز عبور  : " Grid.Row="2" FontSize="27" Margin="5 25 0 0"></TextBlock>
+                <TextBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="SignInUserName" Grid.Row="1" Margin="38 0" Height="50" RenderTransformOrigin="0.514,1.414" Grid.Column="1" />
+                <PasswordBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="SignUpPasswordBox" Height="50" Grid.Row="2" Grid.Column="1" Margin="38,29,38,30"/>
+                <Button Name="SignInBtn"  Grid.Row="3" Grid.Column="1" Width="95" Content="ورود" Click="SignInBtn_Click"/>
+                <Button Name="GoToSignUpPage" Content="برای عضویت اینجا کلیک کنید  !" Grid.Row="3" Width="220" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#FFF1FF00" Click="GoToSignUpPage_Click" >
+
+                </Button>
+                <materialDesign:PackIcon Kind="Alert" Grid.Row="3" Margin="90,0,0,0" VerticalAlignment="Center" Width="30" Height="50" />
+            </Grid>
+            <Grid Name="FirstSignUPPage"  FlowDirection="RightToLeft" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Foreground="Black" Text="صفحه ثبت نام" Style="{StaticResource MaterialDesignHeadline4TextBlock}" Margin="326,10,74,98" Grid.RowSpan="2" FontFamily="Arial Black">
+                </TextBlock>
+                <TextBlock Grid.Column="0" Text="نام : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.ColumnSpan="2" Margin="10,99,390,10" Grid.RowSpan="2"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="20,83,10,55" Text="نام خانوادگی : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.RowSpan="2" ></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="تلفن همراه : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.ColumnSpan="2" Margin="10,59,390,50" Grid.RowSpan="2">
+                </TextBlock>
+
+                <TextBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="FirstNameTextBox" Grid.Row="1" Margin="38,4,56,54" Height="50" RenderTransformOrigin="0.514,1.414" Grid.Column="1" />
+                <TextBox  BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="LastNameTextBox" Grid.Row="1" Grid.Column="1" Margin="38,83,56,84" Grid.RowSpan="2" Height="50" RenderTransformOrigin="0.514,1.414" />
+                <TextBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="PhoneNumberTextBox" Grid.Row="2" Margin="38,63,56,104" Grid.RowSpan="2" Height="50" RenderTransformOrigin="0.514,1.414" Grid.Column="1"/>
+                <Button Name="Nextbtn" Content="Next" Grid.Column="1" Grid.Row="3" Height="50" Width="85" Click="Nextbtn_Click"></Button>
+                <Button Name="BackToSignIn" Content="Back" Grid.Row="3" Width="100" Height="50" Style="{StaticResource MaterialDesignFlatMidBgButton}" Click="BackToSignIn_Click" />
+            </Grid>
+            <Grid Name="Second_SignUpPage" FlowDirection="RightToLeft" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="2" Foreground="Black" Text="صفحه ثبت نام" Style="{StaticResource MaterialDesignHeadline4TextBlock}" Margin="326,10,74,98" Grid.RowSpan="2" FontFamily="Arial Black"/>
+                <TextBlock Grid.Column="0" Text="نام کاربری : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.ColumnSpan="2" Margin="10,99,390,10" Grid.RowSpan="2"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="20,83,10,55" Text="رمز عبور : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.RowSpan="2" ></TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="تکرار رمز عبور  : " Style="{StaticResource MaterialDesignHeadline4TextBlock}" Grid.ColumnSpan="2" Margin="10,59,390,50" Grid.RowSpan="2">
+                </TextBlock>
+
+                <TextBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="UserNameTextBox" Margin="38,99,56,68" Height="50" RenderTransformOrigin="0.514,1.414" Grid.Column="1" Grid.RowSpan="2"/>
+                <PasswordBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="PasswordBox" Height="50" Grid.Row="1" Grid.Column="1" Margin="38,83,56,84" Grid.RowSpan="2"/>
+                <PasswordBox BorderBrush="YellowGreen" BorderThickness="3" Background="White" Name="ConfirimPasswordBox" Height="50" Grid.Row="2" Grid.Column="1" Margin="38,63,56,104" Grid.RowSpan="2"/>
+                <Button Name="Savebtn" Content="Save" Grid.Column="1" Grid.Row="3" Height="50" Width="85" Click="Savebtn_Click"></Button>
+                <Button Name="BackBtn" Content="Back" Grid.Column="0" Grid.Row="3" Height="50" Width="85" Click="BackBtn_Click"></Button>
+
+            </Grid>
+            <DockPanel Name="MainPanel" FlowDirection="RightToLeft" Visibility="Collapsed">
+                <DockPanel DockPanel.Dock="Top" Background="{StaticResource PrimaryHueDarkBrush}" Height="50">
+                    <TextBlock>
+
+                    </TextBlock>
+                    <Menu DockPanel.Dock="Right" Width="50" Margin="5" FlowDirection="RightToLeft">
+                        <MenuItem Icon="{materialDesign:PackIcon Kind=Menu}">
+                            <MenuItem Name="ManagmentItem"  Header="پنل مدیریت" Icon="{materialDesign:PackIcon Kind=AccountCircleOutline}" Click="ManagmentItem_Click"/>
+                            <MenuItem Name="CartItem" Header="سبد خرید کالا" Icon="{materialDesign:PackIcon Kind=Cart}" Click="CartItem_Click"/>
+                            <Separator/>
+                            <MenuItem Name="ContactItem" Header="ارتباط با ما " Icon="{materialDesign:PackIcon Kind=Phone}" Click="ContactItem_Click" />
+                            <MenuItem Name="logOutt" Header="خروج از حساب کاربری" Icon="{materialDesign:PackIcon Kind=Logout}" Click="logOutt_Click"/>
+                        </MenuItem>
+                    </Menu>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" FlowDirection="RightToLeft" VerticalAlignment="Center">
+                        <materialDesign:PackIcon Kind="Account" Width="25" Height="25"/>
+                        <TextBlock Name="UerNameKol" Text="UserName" VerticalAlignment="Center" Margin="1 7 0 4" Width="60" Height="25">
+                        </TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                <Border DockPanel.Dock="Left" BorderThickness="2 0" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}" BorderBrush="{StaticResource MaterialDesignToolForeground}" Padding="4 0">
+                    <StackPanel FlowDirection="RightToLeft">
+                        <TextBlock FlowDirection="RightToLeft" Text="دسته بندی" Style="{StaticResource ResourceKey=MaterialDesignTextBlock}" FontSize="16"/>
+                        <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" Width="170" Margin="0 7">
+                            <ComboBoxItem Name="cpu" Content="پردازنده" IsSelected="True"/>
+                            <ComboBoxItem Name="gpu" Content="کارت گرافیک" MouseDoubleClick="cpu_MouseDoubleClick"/>
+                            <ComboBoxItem Content="رَم"/>
+                            <ComboBoxItem Content="مادر بورد"/>
+                        </ComboBox>
+                        <Separator Margin="-4 5" Style="{StaticResource MaterialDesignDarkSeparator}" Height="10"/>
+                        <TextBlock Text="فیلترها" Margin="7 0" FontSize="16"/>
+                        <CheckBox Content="فقط کالاهای موجود" Margin="0 5" FontSize="13">
+
+                        </CheckBox>
+                        <CheckBox Content="دارای تخفیف" FontSize="13"></CheckBox>
+                        <Separator Margin="-4 7" Style="{StaticResource MaterialDesignDarkSeparator}" Height="10"/>
+                        <Button Width="75" Content="جستجو" Name="SearchBtn" Style="{StaticResource MaterialDesignFlatDarkBgButton}">
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <ScrollViewer Name="cpus">
+                    <WrapPanel FlowDirection="LeftToRight" Name="ProductWrapPanel">
+                        <materialDesign:Card Width="200" Height="280" Margin="7">
+                            <StackPanel Margin="7">
+                                <Grid>
+                                    <Image Source="Image/cpu2.jpg" Height="150" Width="190"/>
+                                    <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                                        <TextBlock Name="ProductDiscountt" Text="14%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+
+                                <Separator Margin="2 3 1 3"/>
+                                <TextBlock FlowDirection="RightToLeft" Margin="0 0 0 6" Text="نام کالا :" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                                    <Label Content="امتیاز :" Style="{StaticResource MaterialDesignLabel}"/>
+                                    <materialDesign:RatingBar Margin="15 0"
+                                         x:Name="ReadOnlyRatingBar"
+                                         Value="4"
+                                         IsReadOnly="True" />
+                                </StackPanel>
+                                <TextBlock  Text="قیمت"></TextBlock>
+                                <Button Name="Buy" Content="خرید" Width="60" HorizontalAlignment="Right" Click="Buy_Click"></Button>
+                            </StackPanel>
+
+                        </materialDesign:Card>
+                        <materialDesign:Card Width="200" Height="280" Margin="7">
+                            <StackPanel Margin="7">
+                                <Grid>
+                                    <Image Name="image3" Source="Image/cpu4.jpg" Height="150" Width="190"/>
+                                    <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                                        <TextBlock Name="ProductDiscount2" Text="25%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+
+                                <Separator Margin="2 3 1 3"/>
+                                <TextBlock FlowDirection="RightToLeft" Margin="0 0 0 6" Text="نام کالا :" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                                    <Label Content="امتیاز :" Style="{StaticResource MaterialDesignLabel}"/>
+                                    <materialDesign:RatingBar Margin="15 0"
+                                         x:Name="ReadOnlyRatingBarr"
+                                         Value="2"
+                                         IsReadOnly="True" />
+                                </StackPanel>
+                                <TextBlock  Text="قیمت"></TextBlock>
+                                <Button Name="Buy1" Content="خرید" Width="60" HorizontalAlignment="Right" Click="Buy_Click"></Button>
+                            </StackPanel>
+
+                        </materialDesign:Card>
+                        <materialDesign:Card Width="200" Height="280" Margin="7">
+                            <StackPanel Margin="7">
+                                <Grid>
+                                    <Image Source="Image/cpu6.jpg" Height="150" Width="190"/>
+                                    <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                                        <TextBlock Name="ProductDiscountt2" Text="7%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+
+                                <Separator Margin="2 3 1 3"/>
+                                <TextBlock FlowDirection="RightToLeft" Margin="0 0 0 6" Text="نام کالا :" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                                    <Label Content="امتیاز :" Style="{StaticResource MaterialDesignLabel}"/>
+                                    <materialDesign:RatingBar Margin="15 0"
+                                         x:Name="ReadOnlyRatingBar2"
+                                         Value="5"
+                                         IsReadOnly="True" />
+                                </StackPanel>
+                                <TextBlock  Text="قیمت"></TextBlock>
+                                <Button Name="Buy2" Content="خرید" Width="60" HorizontalAlignment="Right" Click="Buy_Click"></Button>
+                            </StackPanel>
+
+                        </materialDesign:Card>
+                        <materialDesign:Card Width="200" Height="280" Margin="7">
+                            <StackPanel Margin="7">
+                                <Grid>
+                                    <Image Name="image4" Source="Image/cpu5.jpg" Height="150" Width="190"/>
+                                    <Border Width="30" Height="30" Background="Red" CornerRadius="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5">
+                                        <TextBlock Name="ProductDiscount3" Text="25%" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+
+                                <Separator Margin="2 3 1 3"/>
+                                <TextBlock FlowDirection="RightToLeft" Margin="0 0 0 6" Text="نام کالا :" Style="{StaticResource MaterialDesignBody1TextBlock}"/>
+                                <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                                    <Label Content="امتیاز :" Style="{StaticResource MaterialDesignLabel}"/>
+                                    <materialDesign:RatingBar Margin="15 0"
+                                         x:Name="ReadOnlyRatingBarr3"
+                                         Value="2"
+                                         IsReadOnly="True" />
+                                </StackPanel>
+                                <TextBlock  Text="قیمت"></TextBlock>
+                                <Button Name="Buy3" Content="خرید" Width="60" HorizontalAlignment="Right" Click="Buy_Click"></Button>
+                            </StackPanel>
+
+                        </materialDesign:Card>
+                    </WrapPanel>
+
+                </ScrollViewer>
+
+            </DockPanel>
+            <StackPanel Name="ContactPage" FlowDirection="RightToLeft" Visibility="Collapsed">
+                <TextBlock Text="به آرسس شاپ خوش آمدید" FontSize="55" Style="{StaticResource MaterialDesignHeadline2TextBlock}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 90 0 40"/>
+                <TextBlock Text="راههای ارتباط با ما  : " FontSize="25" Style="{StaticResource MaterialDesignHeadline2TextBlock}" HorizontalAlignment="Center"/>
+                <TextBlock Text="Gmail : mohammadrezakhodarahmi1382@gmail.com" Style="{StaticResource MaterialDesignHeadline2TextBlock}" FontSize="25" Margin="80 15 0 0"/>
+                <TextBlock Text="Telegram : @khodarahmi_mreza" FontSize="25" Style="{StaticResource MaterialDesignHeadline2TextBlock}" HorizontalAlignment="Center" Margin="0 15"/>
+                <Button Name="BackContact" Width="90" Margin="0 25 0 15" Content="بازگشت" Style="{StaticResource MaterialDesignFlatLightBgButton}" Click="BackContact_Click"></Button>
+            </StackPanel>
+            
+        </Grid>
+        <DockPanel Name="CartPanel" FlowDirection="RightToLeft" Visibility="Collapsed">
+                    <DockPanel DockPanel.Dock="Top" VerticalAlignment="Top" Background="{StaticResource PrimaryHueDarkBrush}" Height="50">
+            <TextBlock>
+
+                </TextBlock>
+                <Menu DockPanel.Dock="Right" HorizontalAlignment="Right" Width="50" Margin="3" FlowDirection="RightToLeft">
+                    <MenuItem Icon="{materialDesign:PackIcon Kind=Menu}">
+                        <MenuItem Name="ManagmentItemm"  Header="پنل مدیریت" Icon="{materialDesign:PackIcon Kind=AccountCircleOutline}" Click="ManagmentItem_Click"/>
+                        <MenuItem Name="CartItem2" Header="سبد خرید کالا" Icon="{materialDesign:PackIcon Kind=Cart}" Click="CartItem_Click"/>
+                        <Separator/>
+                        <MenuItem Name="ContactItem2" Header="ارتباط با ما " Icon="{materialDesign:PackIcon Kind=Phone}" Click="ContactItem_Click" />
+                        <MenuItem Name="LogOutItem" Header="خروج از حساب کاربری" Icon="{materialDesign:PackIcon Kind=Logout}" Click="LogOutItem_Click"/>
+          
+                    </MenuItem>
+                </Menu>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" FlowDirection="RightToLeft" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="Account" Width="25" Height="25"/>
+                    <TextBlock Text="UserName" VerticalAlignment="Center" Margin="1 7 0 4" Width="60" Height="25">
+                    </TextBlock>
+                </StackPanel>
+
+            </DockPanel>
+            <Button Name="FinalCartBtn" Content="خرید خود را نهایی کنید" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="250 10 150 10" Click="FinalCartBtn_Click" ></Button>
+            <Button Name="CartBackBtn" Content="Back" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="-130 0 0 10" Click="CartBackBtn_Click"></Button>
+            
+                <ScrollViewer>
+                    <WrapPanel Name="CartWrapPanel">
+                        
+                    </WrapPanel>
+                </ScrollViewer>
+        </DockPanel>
+
+
+    </Grid>
+</Window>
